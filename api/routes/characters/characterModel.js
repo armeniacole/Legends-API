@@ -20,7 +20,10 @@ const characterSchema = new Schema({
   originEarth: Number,
   currentEarth: String,
   episodes: Array,
-  id: String,
+  id: {
+    type: String,
+    primaryKey: true,
+  },
   legendIsActive: Boolean
 });
 
