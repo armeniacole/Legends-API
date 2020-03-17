@@ -8,10 +8,12 @@ const { PORT } = require("./utils/constants");
 const router = express();
 
 const { router: characterRoutes } = require("./routes/characters/characterRouter");
+const { router: seasonRoutes } = require("./routes/seasons/seasonRouter");
 
 router.use(bodyParser.urlencoded({ extended: true }));
 router.use(bodyParser.json());
 router.use("/api/characters", characterRoutes);
+router.use("/api/seasons", seasonRoutes);
 
 const server = http.createServer(router);
 mongoose
