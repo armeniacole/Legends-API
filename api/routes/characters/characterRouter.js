@@ -18,14 +18,13 @@ router.route('/')
 router.route('/:id')
   .get(async (req, res) => {
     try {
-      // console.log(req)
       const { params } = req;
-      console.log(params)
-      const character = await getCharacterById(params.id);
+      const character = await getCharacterById(params.id.toUpperCase());
       res.json({ data: character });
     } catch (ex) {
       console.log(ex);
       res.status(500).json({ message: "internal server error" });
     }
   })    
+
 exports.router = router;
