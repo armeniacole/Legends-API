@@ -30,4 +30,4 @@ mongoose
   .catch(err => console.log(err));
 
   // merge to prod to deploy
-
+console.log("test")
