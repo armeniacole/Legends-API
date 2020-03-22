@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 const express = require("express");
 const http = require("http");
 const bodyParser = require("body-parser");
+const path = require("path");
 
 const { PORT, URL } = require("./api/utils/constants");
 
