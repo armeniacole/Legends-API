@@ -3,14 +3,14 @@ const express = require("express");
 const http = require("http");
 const bodyParser = require("body-parser");
 
-const { PORT, URL } = require("./utils/constants");
+const { PORT, URL } = require("./api/utils/constants");
 
 const router = express();
 
-const { router: characterRoutes } = require("./routes/characters/characterRouter");
-const { router: seasonRoutes } = require("./routes/seasons/seasonRouter");
-const { router: groupRoutes } = require("./routes/groups/groupRouter");
-const { router: episodeRoutes } = require("./routes/episodes/episodeRouter");
+const { router: characterRoutes } = require("./api/routes/characters/characterRouter");
+const { router: seasonRoutes } = require("./api/routes/seasons/seasonRouter");
+const { router: groupRoutes } = require("./api/routes/groups/groupRouter");
+const { router: episodeRoutes } = require("./api/routes/episodes/episodeRouter");
 
 router.use(bodyParser.urlencoded({ extended: true }));
 router.use(bodyParser.json());
