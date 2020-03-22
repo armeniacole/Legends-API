@@ -21,8 +21,8 @@ router.use("/api/episodes", episodeRoutes);
 
 const server = http.createServer(router);
 
-app.use(express.static(path.join(__dirname, "build")));
-app.get("*", function(req, res) {
+router.use(express.static(path.join(__dirname, "build")));
+router.get("*", function(req, res) {
   res.sendFile(path.join(__dirname, "build", "index.html"));
 });
 
