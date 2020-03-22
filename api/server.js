@@ -3,7 +3,7 @@ const express = require("express");
 const http = require("http");
 const bodyParser = require("body-parser");
 
-const { PORT } = require("./utils/constants");
+const { PORT, URL } = require("./utils/constants");
 
 const router = express();
 
@@ -21,7 +21,7 @@ router.use("/api/episodes", episodeRoutes);
 
 const server = http.createServer(router);
 mongoose
-  .connect("mongodb://localhost:27017/LOT", { useNewUrlParser: true, useUnifiedTopology: true })
+  .connect(URL, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
     server.listen(PORT, () => {
       console.log(`Server is running on PORT:${PORT}`);
